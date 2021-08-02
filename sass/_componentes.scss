@@ -1,0 +1,311 @@
+@use 'mediaQ' as *;
+@use 'color' as *;
+// Boton toogle
+.menu-toggle {
+  position: fixed;
+
+  display: none;
+  @include cel {
+    display: block;
+    z-index: 99000;
+  }
+  right: 4vh;
+  top: 4.6vh;
+  z-index: 520;
+  width: 30px;
+  height: 22px;
+  background: transparent;
+  border-top: 4px solid;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 4px solid;
+  color: $azulOscuro;
+  font-size: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.menu-toggle:before,
+.menu-toggle:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: currentColor;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  transition: -webkit-transform 0.25s ease-in-out;
+  -o-transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+}
+
+button.is-active {
+  border-color: transparent;
+  border-left: none;
+}
+button.is-active:before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+button.is-active:after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  vertical-align: middle;
+}
+
+// menu de navegación
+nav {
+  @include cel {
+    background-color: #fff;
+    a {
+      color: $azulOscuro !important;
+    }
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  z-index: 99999;
+  a {
+    color: #fff;
+    letter-spacing: 0.2rem;
+    font-size: 0.8rem;
+  }
+  .logo {
+    padding: 1em;
+    img {
+      mix-blend-mode: multiply;
+    }
+  }
+  ul {
+    padding: 0 4em;
+    display: flex;
+    li {
+      padding: 0 2em;
+    }
+  }
+
+  @include cel {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    height: 85px;
+    .logo {
+      align-self: flex-start;
+    }
+    ul:nth-child(3n) {
+      li {
+        padding: 1.5em 0;
+      }
+    }
+
+    ul:nth-child(2n) {
+      display: flex;
+      justify-content: center;
+    }
+
+    ul {
+      flex: 1 0 100%;
+      visibility: hidden;
+      display: none;
+      padding: 2em;
+    }
+  }
+}
+
+@include cel {
+  nav + section {
+    padding-top: 80px;
+  }
+}
+
+#social {
+  svg {
+    max-width: 30px;
+    fill: $azulOscuro;
+  }
+}
+
+// aqui todo lo que tenga que ver con el slide
+.glide {
+  position: relative;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.glide__slide {
+  position: relative;
+  @include cel {
+    height: 80vh !important;
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: auto;
+    }
+  }
+  .bandeja {
+    width: 50%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 10%;
+    position: absolute;
+    color: #fff;
+    font-family: Raleway;
+    font-size: clamp(1.3rem, 2vw, 4vw);
+    @include cel {
+      width: 70%;
+    }
+  }
+}
+
+@mixin boton($azul) {
+  display: inline-block;
+  @if $azul {
+    background-color: $azulOscuro;
+    color: #fff;
+  } @else {
+    background-color: #fff;
+    color: $azulOscuro;
+  }
+  font-family: Oxygen;
+  // font-skize: clamp(0.6rem, 0.8rem, 1.5rem);
+  font-size: clamp(1.6vh, 2.5vw, 0.5vw);
+  letter-spacing: 0.2rem;
+  padding: 1rem 2.2rem;
+  margin: 2em 0;
+}
+
+.btn {
+  @include boton(false);
+}
+.btnAzul {
+  @include boton(true);
+}
+
+@mixin puntos() {
+  position: absolute;
+  z-index: 999;
+  max-width: clamp(8%, 10%, 12%);
+  height: auto;
+  right: 1%;
+  bottom: 5%;
+}
+.dots {
+  @include puntos;
+}
+
+#controles {
+  position: absolute;
+  z-index: 8888;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 50px;
+  button {
+    background: none;
+  }
+  img {
+    width: 40px;
+  }
+}
+
+@mixin imagenes($sombra, $izq) {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  .foto {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    -webkit-box-shadow: $sombra 50px 0px 5px $azulClaro;
+    box-shadow: $sombra 50px 0px 5px $azulClaro;
+    @include cel {
+      -webkit-box-shadow: calc(#{$sombra}/ 2) 30px 0px 5px $azulClaro;
+      box-shadow: calc(#{$sombra}/ 2) 30px 0px 5px $azulClaro;
+    }
+  }
+
+  @include cel {
+    order: 0;
+    grid-column: 1/-1;
+    margin-top: 2rem;
+  }
+}
+.conteIma {
+  @include imagenes(10em, false);
+}
+.conteImaIzq {
+  @include imagenes(-10em, false);
+}
+
+// Mixin de puntos
+
+@mixin punto($arriba, $izq) {
+  position: absolute;
+  top: $arriba;
+  left: $izq;
+  @include cel {
+    width: 25%;
+  }
+}
+
+.puntosArriba {
+  @include punto(-20%, 0%);
+}
+.puntosArribaDer {
+  @include punto(-20%, 74%);
+}
+.puntosAbajo {
+  @include punto(80%, 0%);
+}
+.puntosAbajoDer {
+  @include punto(80%, 74%);
+}
+.puntosCasoExito {
+  @include punto(86%, 85%);
+  @include cel {
+    @include punto(95%, 74%);
+  }
+}
+
+@mixin banner() {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vw;
+  @include cel {
+    height: 70vh;
+  }
+  background: url("/img/fondo-maximo-potencial-icza.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 5rem;
+  .h2sepa {
+    padding-bottom: 1rem;
+  }
+}
+.bannerHome {
+  @include banner();
+}
