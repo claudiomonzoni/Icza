@@ -69,6 +69,7 @@ button {
 
 // menu de navegación
 nav {
+  // mix-blend-mode:saturation;
   @include cel {
     background-color: #fff;
     a {
@@ -90,7 +91,15 @@ nav {
   .logo {
     padding: 1em;
     img {
-      mix-blend-mode: multiply;
+      width:150px;
+  height: auto;
+  margin-left: 6em;
+  @include tableta_land{
+    margin-left: 2em;
+  }
+  @include cel{
+    margin-left: 0em;
+  }
     }
   }
   ul {
@@ -126,7 +135,21 @@ nav {
       padding: 2em;
     }
   }
+  transition: all 300ms ease-in-out;
 }
+
+
+.scroll-down {
+		transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up {
+		background-color: $gris;
+    a{
+      color: $azulOscuro;
+    }
+}
+
 
 @include cel {
   nav + section {

@@ -54,6 +54,31 @@ gsap.from(".logo, ul>li",
   duration: 1 //1 segundo
 })
 
+//menu efecto al hacer scroll
+const body = document.getElementById('nav');
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+	const currentScroll = window.pageYOffset;
+	if (currentScroll <= 0) {
+		body.classList.remove("scroll-up");
+		return;
+	}
+
+	if (currentScroll > lastScroll && !body.classList.contains("scroll-down")) {
+		body.classList.remove("scroll-up");
+		body.classList.add("scroll-down");
+	} else if (
+		currentScroll < lastScroll &&
+		body.classList.contains("scroll-down")
+	) {
+		body.classList.remove("scroll-down");
+		body.classList.add("scroll-up");
+	}
+	lastScroll = currentScroll;
+});
+
+
 
 // cargar modulos solo por secciones
 // switch (document.location.pathname)

@@ -32,7 +32,7 @@ h4 {
 .h2sepa {
   font-family: Oxygen;
   font-size: 1vw;
-  @include cel{
+  @include cel {
     font-size: clamp(1.6vh, 0.6vw, 2vw);
   }
   letter-spacing: 0.2rem;
@@ -61,8 +61,7 @@ h2 {
 .conte {
   max-width: 1920px;
   margin: 0 auto;
- padding: 0 5vw;
-
+  padding: 0 5vw;
 }
 
 .porqueHome {
@@ -188,60 +187,68 @@ h2 {
   }
 }
 
-#gridlogos{
+#gridlogos {
   position: relative;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  @include cel{
+  @include cel {
     grid-template-columns: repeat(3, 1fr);
   }
-  div{
+  div {
     display: flex;
-    padding:1rem;
+    padding: 1rem;
     justify-content: center;
     align-items: center;
-
   }
-
 }
-#metodologia{
+#metodologia {
   padding: 5rem 0;
-  background: url('img/fondo-metodologia-icza-way.jpg') no-repeat;
+  background: url("img/fondo-metodologia-icza-way.jpg") no-repeat;
   background-size: 100%;
   background-position: center bottom;
-  @include cel{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  .h2sepa {
+    flex: 1 0 100%;
+  }
+  @include cel {
     background-size: 500%;
-    h2{
+    h2 {
       text-align: left;
     }
-    .h2sepa{
-      padding-left:3rem;
+    .h2sepa {
+      padding-left: 3rem;
     }
   }
-  .iczaWay{
+  .minmax {
+    margin-bottom: 0%;
+  }
+  .iczaWay {
     display: flex;
     justify-content: center;
     padding-top: 3rem;
-    @include cel{
+    @include cel {
       grid-column: 2/-1;
       justify-content: left;
       padding-top: 1rem;
     }
-
   }
-  .bandejaTxt{
-    div{
+  .bandejaTxt {
+    div {
       width: 80%;
     }
     justify-content: left;
-    @include cel{
-      padding-top:0;
-      div{
+    @include cel {
+      padding-top: 0;
+      div {
         width: 70%;
-      }justify-content: center;    
-    .btnAzul{
-      text-align: center;
-    }
+      }
+      justify-content: center;
+      .btnAzul {
+        text-align: center;
+      }
     }
   }
 }
@@ -249,7 +256,7 @@ h2 {
 #footer {
   h3 {
     text-align: left;
-    @include cel{
+    @include cel {
       text-align: center;
     }
   }
@@ -266,17 +273,18 @@ h2 {
   }
   .minmax {
     margin-bottom: 5rem;
-    @include cel{
-      div{
+    #logoPie {
+      max-width: 220px;
+    }
+    @include cel {
+      div {
         grid-column: 1/-1;
         text-align: center;
         margin-top: 1.5rem;
       }
-      #logoPie{
-        margin-top: 6rem;
-        @include cel{
+      #logoPie {
           margin-top: 0rem;
-        }
+         padding:0 5rem;
       }
     }
     div + div {
@@ -289,7 +297,7 @@ h2 {
     border-top: solid 1px $azulOscuro;
     display: flex;
     justify-content: space-between;
-    @include cel{
+    @include cel {
       display: block;
       text-align: center;
     }
