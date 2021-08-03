@@ -1,4 +1,8 @@
-
+const cargando = document.getElementById("cargando")
+window.onload = function(){
+cargando.classList.add("eliminado")
+console.log(cargando)
+}
 //only phones
 var x = window.matchMedia("(max-width: 479px)");
 esCell(x); // Call listener function at run time

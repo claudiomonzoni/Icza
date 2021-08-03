@@ -8,8 +8,7 @@ new Glide('.glide',{
   startAt: 0,
   perView: 1, 
   focusAt: 'center',
-  animationDuration: 4000,
-  gap: 5,
+  animationDuration: 2500,
   // breakpoints: {
   //   1024: {
   //     perView: 1
