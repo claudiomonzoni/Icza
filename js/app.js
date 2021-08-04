@@ -1,7 +1,7 @@
 const cargando = document.getElementById("cargando")
 window.onload = function(){
 cargando.classList.add("eliminado")
-console.log(cargando)
+
 }
 //only phones
 var x = window.matchMedia("(max-width: 479px)");
@@ -20,7 +20,6 @@ function esCell(x) {
 
     function abrirMenuFull () {
       this.abierto = !this.abierto;
-      console.log(abierto)
       mainNav.classList.remove("menuFullAbierto");
       mainNav.classList.remove("desanimaMenu");
       menuIco.classList.toggle("is-active");
@@ -82,6 +81,12 @@ window.addEventListener("scroll", () => {
 	lastScroll = currentScroll;
 });
 
+const WOW = require("wowjs");
+
+window.wow = new WOW.WOW({
+  live: false,
+});
+window.wow.init();
 
 
 // cargar modulos solo por secciones

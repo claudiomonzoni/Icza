@@ -10,7 +10,6 @@ export default class Icono{
     }
 
     construirIcono(){
-        console.log(this.nodo)
         const ele = document.querySelector(this.nodo)
         ele.innerHTML +=`<li><a href="${this.url}" target="_blank"> ${this.objetoIco.svg}</a></li>` // face es un objeto
        
