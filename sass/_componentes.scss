@@ -196,6 +196,22 @@ nav {
   }
 }
 
+.animapuntos {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  .punto {
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: $azulClaro;
+    margin-right: 5px;
+  }
+}
 @mixin boton($azul) {
   display: inline-block;
   @if $azul {
@@ -343,6 +359,5 @@ nav {
   height: 100vh;
 }
 .eliminado {
-  display: none!important;
-
+  display: none !important;
 }

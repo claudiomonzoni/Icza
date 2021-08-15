@@ -13,6 +13,12 @@ gsap.from(".logo, ul>li", {
   opacity: 0,
   duration: 1, //1 segundo
 });
+gsap.from(".punto", {
+  stagger: 0.1,
+  x: 50,
+  opacity: 0,
+  duration: 0.6, //1 segundo
+});
 
 // cargar api rest
 const ulslide = document.querySelector(".glide__slides");
