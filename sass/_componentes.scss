@@ -204,9 +204,19 @@ nav {
   height: 200px;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
+  @include cel{
+top: 30px;
+    width: 130px;
+    height: 130px;
+    
+  }
   .punto {
     width: 5px;
     height: 5px;
+    @include cel{
+      width: 4px;
+      height: 4px;
+    }
     border-radius: 5px;
     background-color: $azulClaro;
     margin-right: 5px;
