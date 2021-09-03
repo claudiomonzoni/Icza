@@ -33,7 +33,7 @@ const cargaBanners = () => {
     .then((banners) => {
       const losbanners = banners.entries;
       losbanners.forEach((banner) => {
-        if(!banner.liga==""){
+        if (!banner.liga == "") {
           const li = `  
           <li class="glide__slide">
           <div class="bandeja">
@@ -44,8 +44,8 @@ const cargaBanners = () => {
           </div>
           <img src="http://localhost/${banner.fondo_banner.path}" alt=" ${banner.Texto}" />
         </li>`;
-        ulslide.innerHTML += li;
-        }else{
+          ulslide.innerHTML += li;
+        } else {
           const li = `  
           <li class="glide__slide">
           <div class="bandeja">
@@ -55,15 +55,13 @@ const cargaBanners = () => {
           </div>
           <img src="http://localhost/${banner.fondo_banner.path}" alt=" ${banner.Texto}" />
         </li>`;
-        ulslide.innerHTML += li;
+          ulslide.innerHTML += li;
         }
-   
       });
     })
     .then(() => {
       //llamo el carrusel
-      slideIndex()
-      console.log("2");
+      slideIndex();
     });
 };
 //cargaBanners();
