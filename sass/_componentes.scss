@@ -107,6 +107,9 @@ nav {
     display: flex;
     li {
       padding: 0 2em;
+      .activo {
+        color: $azulOscuro;
+      }
     }
   }
 
@@ -146,6 +149,9 @@ nav {
   background-color: $gris;
   a {
     color: $azulOscuro;
+  }
+  .activo {
+    font-weight: bold;
   }
 }
 
@@ -204,16 +210,15 @@ nav {
   height: 200px;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  @include cel{
-top: 30px;
+  @include cel {
+    top: 30px;
     width: 130px;
     height: 130px;
-    
   }
   .punto {
     width: 5px;
     height: 5px;
-    @include cel{
+    @include cel {
       width: 4px;
       height: 4px;
     }
@@ -334,7 +339,7 @@ top: 30px;
   }
 }
 
-@mixin banner() {
+@mixin banner($fondo) {
   position: relative;
   display: flex;
   justify-content: center;
@@ -343,7 +348,7 @@ top: 30px;
   @include cel {
     height: 70vh;
   }
-  background: url("/img/fondo-maximo-potencial-icza.jpg") no-repeat;
+  background: url($fondo) no-repeat;
   background-size: cover;
   background-position: center center;
   color: #fff;
@@ -352,11 +357,105 @@ top: 30px;
   .h2sepa {
     padding-bottom: 1rem;
   }
+  p {
+    margin: 0 20%;
+    font-weight: bold;
+    font-size: 1.4em;
+    font-family: Raleway;
+    @include cel {
+      font-size: initial;
+    }
+  }
 }
 .bannerHome {
-  @include banner();
+  @include banner("/img/fondo-maximo-potencial-icza.jpg");
+}
+.bannerNosotros {
+  @include banner("/img/Nosotros-fondo-cta.jpg");
 }
 
+.bannerServicios {
+  @include banner("/img/servicio-fondo-cta.jpg");
+}
+
+@mixin sectionIntro($fondo) {
+  margin-top: 0;
+  background: url($fondo) no-repeat;
+  background-position: center right;
+  background-size: contain;
+  min-height: 30vw;
+  display: grid;
+  grid-template-columns: 10% 1fr 1fr;
+  @include cel {
+    grid-template-columns: 15% 1fr 15%;
+    background-position: 100% 110%;
+    background-size: 120%;
+    padding: 15vw 0;
+  }
+  justify-content: center;
+  align-content: center;
+  margin-top: -5px;
+  div {
+    grid-column: 2;
+    padding: 10vw 0;
+
+    p {
+      padding-bottom: 2em;
+    }
+  }
+}
+
+#nosotrosIntro {
+  @include sectionIntro("/img/fondo-gris-nosotros.jpg");
+}
+#serviciosIntro {
+  @include sectionIntro("/img/fondo-servicios-a.jpg");
+}
+
+@mixin cfa($fondo, $abajo) {
+  background: url($fondo) no-repeat;
+  background-size: cover;
+  @if $abajo {
+    transform: translateY(3rem);
+  -webkit-transform: translateY(3rem);
+  }@else{
+    transform: translateY(-3rem);
+    -webkit-transform: translateY(-3rem);
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Raleway;
+  min-height: 30vw;
+  @include cel{
+    min-height: 30vh;
+  }
+  @include cel {
+    grid-column: 1/-1;
+    transform: translateY(0rem);
+    -webkit-transform: translateY(0rem);
+  }
+  p {
+    color: #fff;
+    font-size: clamp(2vh, 1.5vw, 1.8vw);
+    width: 70%;
+    padding: 10vw 0;
+    @include cel {
+      font-size: 1.2em;
+      padding: 22vw 0;
+    }
+  }
+}
+
+.cfaNosotros {
+  @include cfa("/img/Nosotros-fondo-texto.jpg", false);
+}
+.cfaServicios {
+  @include cfa("/img/Servicios-icza-problem-solving.jpg", false);
+}
+.cfaServicios2 {
+  @include cfa("/img/Servicios-icza-definir-gestionar.jpg", true);
+}
 #cargando {
   position: absolute;
   z-index: 999999;
