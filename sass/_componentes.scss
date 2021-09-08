@@ -419,6 +419,9 @@ nav {
   @include banner("/img/servicio-fondo-cta.jpg");
 }
 
+.bannerContacto {
+  @include banner("/img/contacto-fondo-cta.jpg");
+}
 @mixin sectionIntro($fondo) {
   margin-top: 0;
   background: url($fondo) no-repeat;

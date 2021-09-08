@@ -136,3 +136,12 @@ window.wow = new WOW.WOW({
   live: false,
 });
 window.wow.init();
+
+const divmapa = document.getElementById('mapa')
+import { Mapa } from './leaflet'
+if (divmapa) {
+  const mapa = new Mapa()
+  document.addEventListener('DOMContentLoaded', () => {
+    mapa.obtenerDatos()
+  })
+}
