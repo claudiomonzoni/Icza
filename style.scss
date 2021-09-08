@@ -28,7 +28,7 @@ h4 {
     font-weight: 600;
   }
 }
-#cuerpo{
+#cuerpo {
   overflow: hidden;
 }
 
@@ -36,10 +36,20 @@ h4 {
   font-family: Oxygen;
   font-size: 1vw;
   @include cel {
-    font-size: clamp(1.6vh, 0.6vw, 2vw);
+    font-size: clamp(1.8vh, 0.6vw, 2vw);
   }
   letter-spacing: 0.2rem;
   text-align: center;
+  text-transform: uppercase;
+}
+.h2sepaizq {
+  font-family: Oxygen;
+  font-size: 1vw;
+  @include cel {
+    font-size: clamp(1.8vh, 0.6vw, 2vw);
+  }
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
 }
 h2 {
   font-size: clamp(4.5vh, 3vw, 5vw);
@@ -142,6 +152,7 @@ h2 {
     }
   }
 }
+
 #caso {
   position: relative;
   background-color: $azulMuyClaro;
@@ -158,6 +169,31 @@ h2 {
     margin-bottom: 0.6rem;
   }
 }
+
+#casoInvertido {
+  position: relative;
+  background-color: $azulMuyClaro;
+  background: linear-gradient(90deg, $azulMuyClaro 75%, #ffffff 25%);
+  @include cel {
+    background: $azulMuyClaro;
+    margin-bottom: 5rem;
+  }
+  h2 {
+    text-align: left;
+    padding-bottom: 1rem;
+  }
+  p {
+    margin-bottom: 0.6rem;
+  }
+}
+
+.estilotxt {
+  font-size: clamp(2vh, 1.5vw, 1.8vw);
+  @include cel {
+    font-size: 1.2em;
+  }
+}
+
 #conteImaCaso {
   position: relative;
   transform: translateY(-3rem);
@@ -270,12 +306,11 @@ h2 {
     padding-top: 1rem;
   }
   #social {
-    li{
+    li {
       display: inline-block;
       width: 60px;
       padding: 1rem 1rem 0 0;
     }
-
   }
   .minmax {
     margin-bottom: 5rem;
@@ -289,7 +324,7 @@ h2 {
         margin-top: 1.5rem;
       }
       #logoPie {
-         margin:0 5rem;
+        margin: 0 5rem;
       }
     }
     div + div {
@@ -309,3 +344,9 @@ h2 {
   }
 }
 
+#serviciosDivfinal {
+  background: url("img/fondo-servicios-e-gris@2x.jpg") no-repeat;
+  background-size: 100%;
+  background-position: center bottom;
+  padding-bottom: 3em;
+}

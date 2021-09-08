@@ -279,20 +279,34 @@ nav {
   }
 }
 
-@mixin imagenes($sombra, $izq) {
+@mixin imagenes($sombra, $fondo, $colorSombra) {
   display: flex;
   justify-content: center;
   position: relative;
+  @if $fondo != null {
+    background: url($fondo) no-repeat;
+    background-size: cover;
+    min-height: 25vw;
+    -webkit-box-shadow: $sombra 50px 0px 5px $colorSombra;
+    box-shadow: $sombra 50px 0px 5px $colorSombra;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include cel {
+      padding:2em;
+      -webkit-box-shadow: calc(#{$sombra}/ 2) 30px 0px 5px $colorSombra;
+      box-shadow: calc(#{$sombra}/ 2) 30px 0px 5px $colorSombra;
+    }
+  }
 
   .foto {
-    width: 80%;
     height: auto;
     object-fit: cover;
-    -webkit-box-shadow: $sombra 50px 0px 5px $azulClaro;
-    box-shadow: $sombra 50px 0px 5px $azulClaro;
+    -webkit-box-shadow: $sombra 50px 0px 5px $colorSombra;
+    box-shadow: $sombra 50px 0px 5px $colorSombra;
     @include cel {
-      -webkit-box-shadow: calc(#{$sombra}/ 2) 30px 0px 5px $azulClaro;
-      box-shadow: calc(#{$sombra}/ 2) 30px 0px 5px $azulClaro;
+      -webkit-box-shadow: calc(#{$sombra}/ 2) 30px 0px 5px $colorSombra;
+      box-shadow: calc(#{$sombra}/ 2) 30px 0px 5px $colorSombra;
     }
   }
 
@@ -303,10 +317,37 @@ nav {
   }
 }
 .conteIma {
-  @include imagenes(10em, false);
+  @include imagenes(10em, null, $azulClaro);
 }
 .conteImaIzq {
-  @include imagenes(-10em, false);
+  @include imagenes(-10em, null, $azulClaro);
+}
+.conteImaServicio1 {
+  @include imagenes(10em, "img/fondo-servicios-e-gris-1.jpg", $azulClaro);
+}
+
+.conteImaServicio2 {
+  @include imagenes(
+    -10em,
+    "img/fondo-servicios-casos-de-negocios.jpg",
+    $azulOscuro
+  );
+}
+
+.conteImaServicio3 {
+  @include imagenes(10em, "img/fondo-servicios-azul-1@2x.jpg", $azulClaro);
+}
+
+.conteImaServicio4 {
+  @include imagenes(-10em, "img/fondo-servicios-e-gris-2@2x.jpg", $azulOscuro);
+}
+
+.conteImaServicio5 {
+  @include imagenes(10em, null, $azulClaro);
+}
+
+.conteImaServicio6 {
+  @include imagenes(-10em, null, #ffffff);
 }
 
 // Mixin de puntos
@@ -388,7 +429,7 @@ nav {
   grid-template-columns: 10% 1fr 1fr;
   @include cel {
     grid-template-columns: 15% 1fr 15%;
-    background-position: 100% 110%;
+    background-position: top center;
     background-size: 120%;
     padding: 15vw 0;
   }
@@ -417,8 +458,8 @@ nav {
   background-size: cover;
   @if $abajo {
     transform: translateY(3rem);
-  -webkit-transform: translateY(3rem);
-  }@else{
+    -webkit-transform: translateY(3rem);
+  } @else {
     transform: translateY(-3rem);
     -webkit-transform: translateY(-3rem);
   }
@@ -427,7 +468,7 @@ nav {
   align-items: center;
   font-family: Raleway;
   min-height: 30vw;
-  @include cel{
+  @include cel {
     min-height: 30vh;
   }
   @include cel {
@@ -454,7 +495,7 @@ nav {
   @include cfa("/img/Servicios-icza-problem-solving.jpg", false);
 }
 .cfaServicios2 {
-  @include cfa("/img/Servicios-icza-definir-gestionar.jpg", true);
+  @include cfa("/img/Servicios-icza-orden.jpg", true);
 }
 #cargando {
   position: absolute;
