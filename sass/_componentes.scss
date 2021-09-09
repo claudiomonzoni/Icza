@@ -419,6 +419,10 @@ nav {
   @include banner("/img/servicio-fondo-cta.jpg");
 }
 
+.bannerClientes {
+  @include banner("/img/clientes-fondo-cta.jpg");
+}
+
 .bannerContacto {
   @include banner("/img/contacto-fondo-cta.jpg");
 }
