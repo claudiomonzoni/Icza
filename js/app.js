@@ -101,10 +101,10 @@ function esCell(x) {
 
 // insertar iconos de redes sociales
 import Icono, { face, insta } from "./iconos";
-const faceicono = new Icono("http://facebook.com", "#social", face);
-faceicono.construirIcono();
-const instaIcono = new Icono("http://instagram.com", "#social", insta);
-instaIcono.construirIcono();
+// const faceicono = new Icono("http://facebook.com", "#social", face);
+// faceicono.construirIcono();
+// const instaIcono = new Icono("http://instagram.com", "#social", insta);
+// instaIcono.construirIcono();
 
 //menu efecto al hacer scroll
 const body = document.getElementById("nav");
