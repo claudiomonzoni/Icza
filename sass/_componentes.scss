@@ -293,7 +293,7 @@ nav {
     justify-content: center;
     align-items: center;
     @include cel {
-      padding:2em;
+      padding: 2em;
       -webkit-box-shadow: calc(#{$sombra}/ 2) 30px 0px 5px $colorSombra;
       box-shadow: calc(#{$sombra}/ 2) 30px 0px 5px $colorSombra;
     }
@@ -455,6 +455,9 @@ nav {
 
 #nosotrosIntro {
   @include sectionIntro("/img/fondo-gris-nosotros.jpg");
+}
+#clientesIntro {
+  @include sectionIntro("/img/fondo-clientes-gris.jpg");
 }
 #serviciosIntro {
   @include sectionIntro("/img/fondo-servicios-a.jpg");

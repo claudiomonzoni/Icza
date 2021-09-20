@@ -116,7 +116,7 @@ h2 {
     height: 25vw;
   }
 }
-.porqueContacto{
+.porqueContacto {
   position: relative;
   z-index: 400;
   background: url("/img/fondo-servicios-azul-1@2x.jpg") no-repeat;
@@ -132,7 +132,7 @@ h2 {
 
   ul {
     padding: 10vw 0;
-    @include cel{
+    @include cel {
       padding: 15vw;
     }
     li {
@@ -157,7 +157,6 @@ h2 {
   @include hd {
     height: 25vw;
   }
-  
 }
 
 .bandejaTxt {
@@ -290,9 +289,17 @@ h2 {
   }
   div {
     display: flex;
-    padding: 1rem;
+    padding: 2rem;
     justify-content: center;
     align-items: center;
+    @include cel {
+      padding: 1em;
+    }
+    img {
+      width: 100%;
+      max-width: 150px;
+      height: auto;
+    }
   }
 }
 #metodologia {
@@ -409,11 +416,122 @@ h2 {
   height: 35vw;
   margin-top: -18vw;
   z-index: 0;
-  @include hd{  
+  @include hd {
     margin-top: -10vw;
   }
-  @include cel{
+  @include cel {
     margin-top: 0;
     height: 40vh;
   }
+}
+
+@mixin cliente($cliente2) {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 100px auto 1fr 100px;
+  
+  @include cel{
+    grid-template-rows: 100px auto 1fr 10px;
+  }
+
+  h2{
+    font-size: clamp(1.8vh, 1.8vw, 2vw);
+    @include cel{
+      font-size: 1.8em;
+    }
+  }
+
+  .logo {
+    @include cel {
+      grid-column: 1 / -1;
+      grid-row: 1 / span 2;
+      min-height: 45vh;
+      padding: 10vh 0;
+    }
+    grid-column: 9 / span 4;
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-evenly;
+    background-color: $azulMuyClaro;
+    min-height: 30vw;
+    img {
+      flex: 1 0 auto;
+      max-width: 200px;
+      padding: 1em;
+      mix-blend-mode: multiply;
+    }
+  }
+  .conte {
+    grid-column: 2 / span 8;
+    grid-row: 2 / span 3;
+    color: #ffffff;
+    background-color: $azulOscuro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include cel {
+      grid-column: 1 / -1;
+      grid-row: 3 / span 2;
+      padding: 20% 15%;
+    }
+
+    h2 {
+      flex: 1 0 100%;
+    }
+    p {
+      flex: 1;
+      margin-bottom: 1em;
+    }
+    b {
+      display: block;
+      padding: 1em 0;
+      text-transform: uppercase;
+    }
+  }
+
+  @if $cliente2 == false {
+    .conte{
+      padding: 10% 20% 10% 10%;
+      @include cel {
+        grid-column: 1 / -1;
+        grid-row: 3 / span 2;
+        padding: 20% 15%;
+      }
+    }
+  }
+  @if $cliente2 {
+    align-items: none;
+    .logo {
+      grid-column: 1 / span 4;
+      grid-row: 2 / span 1;
+      @include cel {
+        grid-column: 1 / -1;
+        grid-row: 2 / span 1;
+      }
+    }
+    .conte {
+      grid-column: 6 / span 6;
+      grid-row: 2 / span 1;
+      background-color: #ffffff;
+      color: $azulOscuro;
+      padding: 10% 0;
+
+      @include cel {
+        grid-column: 1 / -1;
+        grid-row: 3 / span 1;
+        padding: 20% 15%;
+      }
+    }
+  }
+}
+
+.cliente {
+  @include cliente($cliente2: false);
+}
+.cliente2 {
+  @include cliente($cliente2: true);
 }
