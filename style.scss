@@ -99,8 +99,9 @@ h2 {
   }
   img {
     position: absolute;
-    bottom: -28%;
+    bottom: -18%;
     left: 20%;
+    max-width: 150px;
   }
   @include cel {
     grid-column: 1/8;
@@ -117,6 +118,7 @@ h2 {
   }
 }
 .porqueContacto {
+  margin-top: 4em;
   position: relative;
   z-index: 400;
   background: url("/img/fondo-servicios-azul-1@2x.jpg") no-repeat;
@@ -129,6 +131,7 @@ h2 {
   color: #ffffff;
   grid-column: 1/2;
   position: relative;
+  a{color:$azulMuyClaro;}
 
   ul {
     padding: 10vw 0;
@@ -141,12 +144,14 @@ h2 {
   }
   img {
     position: absolute;
-    bottom: -28%;
+    bottom: -18%;
     left: 20%;
+    max-width: 150px;
   }
   @include cel {
+    margin-top: 0em;
     grid-column: 1/8;
-    height: 40vh;
+    min-height: 40vh;
     img {
       width: 25%;
       bottom: -18%;
@@ -448,6 +453,15 @@ h2 {
       min-height: 45vh;
       padding: 10vh 0;
     }
+
+    -webkit-box-shadow: 1em 20px 0px 5px $azulClaro;
+    box-shadow: 1em 20px 0px 5px $azulClaro;
+    @include cel {
+      -webkit-box-shadow: calc(#{4em}/ 2) 20px 0px 5px $azulClaro;
+      box-shadow: calc(#{4em}/ 2) 20px 0px 5px $azulClaro;
+    }
+
+
     grid-column: 9 / span 4;
     grid-row: 1 / span 2;
     display: flex;
@@ -459,7 +473,7 @@ h2 {
     min-height: 30vw;
     img {
       flex: 1 0 auto;
-      max-width: 200px;
+      max-width: 250px;
       padding: 1em;
       mix-blend-mode: multiply;
     }

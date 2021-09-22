@@ -263,6 +263,18 @@ nav {
   @include puntos;
 }
 
+.dots-hero {
+  position: absolute;
+  z-index: 999;
+  max-width: clamp(50%, 45%, 85%);
+  @include cel{
+    max-width: 150%;
+  }
+  height: auto;
+  right: 0%;
+  bottom: 0.6%;
+}
+
 #controles {
   position: absolute;
   z-index: 8888;
@@ -340,10 +352,22 @@ nav {
 
 .conteImaServicio4 {
   @include imagenes(-10em, "img/fondo-servicios-e-gris-2@2x.jpg", $azulOscuro);
+  @include cel {
+    img {
+      padding: 2.5em;
+      mix-blend-mode: multiply;
+    }
+  }
 }
 
 .conteImaServicio5 {
-  @include imagenes(10em, null, $azulClaro);
+  @include imagenes(10em, "img/fondo-servicios-e-gris-2@2x.jpg", $azulClaro);
+  @include cel {
+    img {
+      padding: 2.5em;
+      mix-blend-mode: multiply;
+    }
+  }
 }
 
 .conteImaServicio6 {
@@ -356,8 +380,9 @@ nav {
   position: absolute;
   top: $arriba;
   left: $izq;
+  max-width: 8vw;
   @include cel {
-    width: 25%;
+    max-width: 25%;
   }
 }
 
