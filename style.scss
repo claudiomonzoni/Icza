@@ -46,7 +46,7 @@ h4 {
   font-family: Oxygen;
   font-size: 1vw;
   @include cel {
-    font-size: clamp(1.8vh, 0.6vw, 2vw);
+    font-size: clamp(2vh, 0.7vw, 2.2vw);
   }
   letter-spacing: 0.2rem;
   text-transform: uppercase;
