@@ -32,7 +32,7 @@ const ulslide = document.querySelector(".glide__slides");
 
 const cargaBanners = () => {
   fetch(
-    "http://localhost/icza/api/collections/get/Banners/posts?token=19699268c383fc6d78989e43405c7a",
+    "http://panel.icza.mx/api/collections/get/Banners/posts?token=19699268c383fc6d78989e43405c7a",
   )
     .then((res) => {
       return res.json();
@@ -49,7 +49,7 @@ const cargaBanners = () => {
             </h1>
             <a href="${banner.liga}" class="btn">${banner.txt_btn}</a>
           </div>
-          <img src="http://localhost/${banner.fondo_banner.path}" alt=" ${banner.Texto}" />
+          <img src="http://panel.icza.mx/${banner.fondo_banner.path}" alt=" ${banner.Texto}" />
         </li>`;
           ulslide.innerHTML += li;
         } else {
@@ -60,7 +60,7 @@ const cargaBanners = () => {
              ${banner.Texto}
             </h1>
           </div>
-          <img src="http://localhost/${banner.fondo_banner.path}" alt=" ${banner.Texto}" />
+          <img src="http://panel.icza.mx/${banner.fondo_banner.path}" alt=" ${banner.Texto}" />
         </li>`;
           ulslide.innerHTML += li;
         }
@@ -71,7 +71,7 @@ const cargaBanners = () => {
       slideIndex();
     });
 };
-//cargaBanners();
+cargaBanners();
 
 //only phones
 var x = window.matchMedia("(max-width: 479px)");
