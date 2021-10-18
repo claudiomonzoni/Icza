@@ -32,7 +32,7 @@ const ulslide = document.querySelector(".glide__slides");
 
 const cargaBanners = () => {
   fetch(
-    "http://panel.icza.mx/api/collections/get/Banners/posts?token=19699268c383fc6d78989e43405c7a",
+    "https://panel.icza.mx/api/collections/get/Banners/posts?token=19699268c383fc6d78989e43405c7a",
   )
     .then((res) => {
       return res.json();
