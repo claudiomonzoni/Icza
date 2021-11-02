@@ -169,14 +169,15 @@ nav {
 }
 
 // aqui todo lo que tenga que ver con el slide
-.glide {
+
+.glide , .HeroInt {
   position: relative;
   img {
     width: 100%;
     height: auto;
   }
 }
-.glide__slide {
+.glide__slide, .BandejaHero {
   position: relative;
   @include cel {
     height: 80vh !important;

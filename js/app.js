@@ -14,25 +14,24 @@ gsap.from(".logo, ul>li", {
   duration: 1, //1 segundo
 });
 gsap.from(".punto", {
-  stagger: { // wrap advanced options in an object
+  stagger: {
+    // wrap advanced options in an object
     each: 0.3,
     from: "left",
     grid: "auto",
-    ease: "power2.inOut", 
+    ease: "power2.inOut",
   },
   x: 50,
   opacity: 0,
   duration: 0.6, //1 segundo
 });
 
-
-
 // cargar api rest
 const ulslide = document.querySelector(".glide__slides");
 
 const cargaBanners = () => {
   fetch(
-    "https://panel.icza.mx/api/collections/get/Banners/posts?token=19699268c383fc6d78989e43405c7a",
+    "https://icza.mx/panel/api/collections/get/Banners/posts?token=19699268c383fc6d78989e43405c7a",
   )
     .then((res) => {
       return res.json();
@@ -49,7 +48,7 @@ const cargaBanners = () => {
             </h1>
             <a href="${banner.liga}" class="btn">${banner.txt_btn}</a>
           </div>
-          <img src="http://panel.icza.mx/${banner.fondo_banner.path}" alt=" ${banner.Texto}" />
+          <img src="https://icza.mx/panel/${banner.fondo_banner.path}" alt=" ${banner.Texto}" />
         </li>`;
           ulslide.innerHTML += li;
         } else {
@@ -60,7 +59,7 @@ const cargaBanners = () => {
              ${banner.Texto}
             </h1>
           </div>
-          <img src="http://panel.icza.mx/${banner.fondo_banner.path}" alt=" ${banner.Texto}" />
+          <img src="https://icza.mx/panel/${banner.fondo_banner.path}" alt=" ${banner.Texto}" />
         </li>`;
           ulslide.innerHTML += li;
         }
@@ -144,11 +143,11 @@ window.wow = new WOW.WOW({
 });
 window.wow.init();
 
-const divmapa = document.getElementById('mapa')
-import { Mapa } from './leaflet'
+const divmapa = document.getElementById("mapa");
+import { Mapa } from "./leaflet";
 if (divmapa) {
-  const mapa = new Mapa()
-  document.addEventListener('DOMContentLoaded', () => {
-    mapa.obtenerDatos()
-  })
+  const mapa = new Mapa();
+  document.addEventListener("DOMContentLoaded", () => {
+    mapa.obtenerDatos();
+  });
 }
