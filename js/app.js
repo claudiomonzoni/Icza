@@ -43,9 +43,9 @@ const cargaBanners = () => {
           const li = `  
           <li class="glide__slide">
           <div class="bandeja">
-            <h1>
+            <h2>
              ${banner.Texto}
-            </h1>
+            </h2>
             <a href="${banner.liga}" class="btn">${banner.txt_btn}</a>
           </div>
           <img src="https://icza.mx/panel/${banner.fondo_banner.path}" alt=" ${banner.Texto}" />
@@ -55,9 +55,9 @@ const cargaBanners = () => {
           const li = `  
           <li class="glide__slide">
           <div class="bandeja">
-            <h1>
+            <h2>
              ${banner.Texto}
-            </h1>
+            </h2>
           </div>
           <img src="https://icza.mx/panel/${banner.fondo_banner.path}" alt=" ${banner.Texto}" />
         </li>`;

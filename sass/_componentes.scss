@@ -354,10 +354,22 @@ nav {
     "img/fondo-servicios-casos-de-negocios.jpg",
     $azulOscuro
   );
+  img{
+    padding:3em;
+    @include cel{
+      padding:0em!important;
+    }
+  }
 }
 
 .conteImaServicio3 {
   @include imagenes(10em, "img/fondo-servicios-azul-1@2x.jpg", $azulClaro);
+  img{
+    padding:3em;
+    @include cel{
+      padding:0em!important;
+    }
+  }
 }
 
 .conteImaServicio4 {
@@ -378,8 +390,12 @@ nav {
 .conteImaServicio5 {
   @include imagenes(10em, "img/fondo-servicios-e-gris-2@2x.jpg", $azulClaro);
   img{
+    padding:6em;
     opacity: 0.7;
-   }
+    @include cel{
+      padding:0em!important;
+    }
+  }
   @include cel {
     img {
       transform: translateY(-20px);

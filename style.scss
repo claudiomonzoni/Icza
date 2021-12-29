@@ -550,3 +550,7 @@ h2 {
 .cliente2 {
   @include cliente($cliente2: true);
 }
+
+#elh1{
+  display: none;
+}
